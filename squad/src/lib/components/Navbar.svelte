@@ -5,8 +5,8 @@
 <nav>
     <Logo/>
     <ul>
-        <li>Squad A</li>
-        <li>Squad B</li>
+        <li><a href="#">Squad A</a></li>
+        <li><a href="#">Squad B</a></li>
     </ul>
 </nav>
 
@@ -18,20 +18,32 @@
         text-transform: uppercase;
         font-weight: bold;
         list-style-type: none;
-        display: flex;
-        align-items: center;
+        font-size: 0.8rem;
     }
 
     li {
         display: inline;
-        padding: 1rem 0;
+        padding: 0 1.5rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
     }
 
     nav {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         background-color: #221F29;
         color: #ffffff;
+        padding: 0 2rem;
+    }
+
+    @media (min-width: 38.75rem) {
+        ul {
+            font-size: 1.2rem;
+        }
     }
 </style>
