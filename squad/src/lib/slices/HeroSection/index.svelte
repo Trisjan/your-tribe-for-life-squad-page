@@ -1,4 +1,6 @@
 <script>
+	// @ts-nocheck
+
 	import { PrismicRichText } from '@prismicio/svelte';
 	import { PrismicImage } from '@prismicio/svelte';
 	import Label from './Label.svelte';
@@ -11,24 +13,99 @@
 
 <Navbar/>
 
-<section class="container">
-	<PrismicRichText
-		field={slice.primary.content}
-		components={{
-			label: Label
-		}}
-	/>
 
-	<PrismicImage field={slice.primary.hero_img} />
+<section class="hero">
+	<section class="hero-introduction">
+		<section class="hero-title">
+			<PrismicRichText field={slice.primary.hero_title} />
+		</section>
+		<section class="hero-intro">
+			<PrismicRichText
+				field={slice.primary.content}
+				components={{
+					label: Label
+				}}
+			/>
+		</section>
+	</section>
+
+
+
+	<section class="hero-image">
+		<PrismicImage field={slice.primary.hero_image} />
+	</section>
 </section>
 
 <Profile/>
 
 <style>
-	.container {
-		max-width: 600px;
-		margin: 6em auto;
-		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-			'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Syncopate:wght@700&display=swap');
+	.hero {
+		background-color: #221f29;
+		color: #ffffff;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	.hero-title {
+		/* font settings: */
+		font-family: Syncopate;
+		font-size: 1.5rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: 0.015rem;
+		/* margin + padding settings: */
+		margin: 1rem 0rem 2rem 1rem;
+	}
+
+	.hero-intro {
+		/* font settings: */
+		font-family: Syncopate;
+		font-size: 0.75rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 161.102%; /* 1.20825rem */
+		letter-spacing: 0.04125rem;
+		/* margin + padding settings: */
+		margin-bottom: 1rem;
+		margin-left: 1rem;
+	}
+
+	.hero-image {
+		display: none;
+	}
+
+	@media (min-width: 31em) {
+		.hero-image {
+			display: none;
+		}
+	}
+
+	@media (min-width: 45em) {
+		.hero {
+			display: grid;
+			grid:
+				'title image' 1fr
+				/ 1fr 1fr;
+			column-gap: 20px;
+		}
+
+		.hero-introduction {
+			grid-area: title;
+		}
+
+		.hero-image {
+			display: block;
+			grid-area: image;
+			text-align: right;
+		}
+	}
+
+	@media (min-width: 68em) {
+		.hero {
+			padding: 2rem;
+		}
 	}
 </style>

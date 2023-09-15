@@ -9,32 +9,33 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Nisi eiusmod nostrud laborum tempor adipisicing adipisicing proident sunt elit id. Excepteur commodo occaecat Lorem non fugiat laborum consequat occaecat sit."
+							"text": "Sint dolor nostrud aliquip reprehenderit consequat cupidatat commodo ut adipisicing esse. Lorem excepteur incididunt et ullamco laboris ea commodo sit commodo ipsum consequat labore adipisicing excepteur tempor. Sunt pariatur sunt nisi elit officia cillum culpa dolore ullamco deserunt."
 						}
 					}
 				]
 			},
-			"title": {
+			"hero_title": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Consectetur amet ea aute eiusmod ipsum culpa. Lorem laborum laborum nulla quis ut nisi nulla mollit sit. Amet nisi non ad ipsum excepteur pariatur et aliqua nostrud officia."
+							"text": "Ullamco est deserunt nostrud proident officia tempor non occaecat occaecat velit et anim. Non ex veniam sit dolor tempor cupidatat irure duis non nisi ea aute nostrud incididunt."
 						}
 					}
 				]
 			},
-			"hero_img": {
+			"hero_image": {
+				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
-					"url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
-					"width": 3344,
-					"height": 2509
+					"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+					"width": 4172,
+					"height": 4000
 				},
-				"url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
-				"width": 3344,
-				"height": 2509,
+				"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+				"width": 4172,
+				"height": 4000,
 				"edit": {
 					"zoom": 1,
 					"crop": {
@@ -43,17 +44,18 @@
 					},
 					"background": "transparent"
 				},
-				"credits": null,
-				"alt": null,
-				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
-			"squads": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "DocumentLink",
-					"id": "mock_document_id"
-				}
+			"hero_button": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolor culpa nostrud mollit."
+						}
+					}
+				]
 			}
 		},
 		"items": [
