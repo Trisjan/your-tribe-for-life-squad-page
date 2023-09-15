@@ -1,5 +1,6 @@
 <script>
 	import { PrismicRichText } from '@prismicio/svelte';
+	import { PrismicImage } from '@prismicio/svelte';
 	import Label from './Label.svelte';
 
 	/** @type {import("@prismicio/client").Content.RichTextSlice} */
@@ -13,6 +14,8 @@
 			label: Label
 		}}
 	/>
+
+	<PrismicImage field={slice.primary.hero_img} />
 </section>
 
 <style>
