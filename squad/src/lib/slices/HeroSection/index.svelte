@@ -3,10 +3,13 @@
 	import { PrismicImage } from '@prismicio/svelte';
 	import Label from './Label.svelte';
 	import Profile from '$lib/components/profile.svelte';
+	import Navbar from '$lib/components/navbar.svelte';
 
 	/** @type {import("@prismicio/client").Content.RichTextSlice} */
 	export let slice;
 </script>
+
+<Navbar/>
 
 <section class="container">
 	<PrismicRichText
