@@ -3,10 +3,10 @@
 </script>
 
 <nav>
-    <Logo/>
+    <a href="/"><Logo/></a>
     <ul>
-        <li><a href="#">Squad A</a></li>
-        <li><a href="#">Squad B</a></li>
+        <li><a href="/">Squad A</a></li>
+        <li><a href="/">Squad B</a></li>
     </ul>
 </nav>
 
@@ -18,7 +18,8 @@
         text-transform: uppercase;
         font-weight: bold;
         list-style-type: none;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        display: none;
     }
 
     li {
@@ -41,7 +42,32 @@
         padding: 0 2rem;
     }
 
-    @media (min-width: 38.75rem) {
+    @media (min-width: 31em) {
+        nav {
+            font-size: 0.8rem;
+        }
+
+        ul {
+            display: inline;
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (min-width: 45em) {
+        nav {
+            font-size: 1rem;
+        }
+
+        ul {
+            font-size: 1rem;
+        }
+    } 
+
+    @media (min-width: 68em) {
+        nav {
+            font-size: 1.2rem;
+        }
+
         ul {
             font-size: 1.2rem;
         }
