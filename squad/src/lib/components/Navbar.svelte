@@ -1,5 +1,5 @@
 <script>
-    import Logo from "./Logo.svelte";
+    import Logo from "./logo.svelte";
 </script>
 
 <nav>
@@ -11,10 +11,8 @@
 </nav>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
 
     ul {
-        font-family: 'Syncopate', sans-serif;
         text-transform: uppercase;
         font-weight: bold;
         list-style-type: none;
