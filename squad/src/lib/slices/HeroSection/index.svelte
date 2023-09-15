@@ -95,5 +95,8 @@
 	}
 
 	@media (min-width: 68em) {
+		.hero {
+			padding: 2rem;
+		}
 	}
 </style>
