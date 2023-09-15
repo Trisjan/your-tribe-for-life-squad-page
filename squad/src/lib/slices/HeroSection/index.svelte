@@ -6,6 +6,7 @@
 	import Label from './Label.svelte';
 	import Profile from '$lib/components/profile.svelte';
 	import Navbar from '$lib/components/navbar.svelte';
+	import Button from '$lib/components/button.svelte';
 
 	/** @type {import("@prismicio/client").Content.RichTextSlice} */
 	export let slice;
@@ -29,7 +30,7 @@
 		</section>
 	</section>
 
-
+<Button/>
 
 	<section class="hero-image">
 		<PrismicImage field={slice.primary.hero_image} width="400px" />
@@ -41,6 +42,11 @@
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Syncopate:wght@700&display=swap');
+	
+	* {
+		font-family: Syncopate;
+	}
+	
 	.hero {
 		background-color: #221f29;
 		color: #ffffff;
