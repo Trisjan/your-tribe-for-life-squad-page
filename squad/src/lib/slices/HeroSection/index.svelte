@@ -2,6 +2,7 @@
 	import { PrismicRichText } from '@prismicio/svelte';
 	import { PrismicImage } from '@prismicio/svelte';
 	import Label from './Label.svelte';
+	import Profile from '$lib/components/profile.svelte';
 	import Navbar from '$lib/components/navbar.svelte';
 
 	/** @type {import("@prismicio/client").Content.RichTextSlice} */
@@ -20,6 +21,8 @@
 
 	<PrismicImage field={slice.primary.hero_img} />
 </section>
+
+<Profile/>
 
 <style>
 	.container {
