@@ -36,7 +36,9 @@
           "type": "Image",
           "config": {
             "label": "hero_image",
-            "constraint": {},
+            "constraint": {
+              "width": 650
+            },
             "thumbnails": []
           }
         },

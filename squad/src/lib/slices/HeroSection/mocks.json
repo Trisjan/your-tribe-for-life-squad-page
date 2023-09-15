@@ -29,13 +29,13 @@
 				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
-					"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
-					"width": 4172,
-					"height": 4000
+					"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+					"width": 3456,
+					"height": 3456
 				},
-				"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
-				"width": 4172,
-				"height": 4000,
+				"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?rect=0%2C0%2C3456%2C3456&w=650&h=650",
+				"width": 650,
+				"height": 650,
 				"edit": {
 					"zoom": 1,
 					"crop": {

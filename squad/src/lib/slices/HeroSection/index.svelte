@@ -32,7 +32,7 @@
 
 
 	<section class="hero-image">
-		<PrismicImage field={slice.primary.hero_image} />
+		<PrismicImage field={slice.primary.hero_image} width="400px" />
 	</section>
 </section>
 
@@ -92,8 +92,26 @@
 			column-gap: 20px;
 		}
 
+		.hero-title {
+			font-family: Syncopate;
+			font-size: 3rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			letter-spacing: 0.04rem;
+		}
+
 		.hero-introduction {
 			grid-area: title;
+		}
+
+		.hero-intro {
+			font-family: Syncopate;
+			font-size: 0.85rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 161.102%; /* 1.81238rem */
+			letter-spacing: 0.06188rem;
 		}
 
 		.hero-image {
