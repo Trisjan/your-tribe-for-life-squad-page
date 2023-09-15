@@ -4,10 +4,15 @@
 	import { PrismicRichText } from '@prismicio/svelte';
 	import { PrismicImage } from '@prismicio/svelte';
 	import Label from './Label.svelte';
+	import Profile from '$lib/components/profile.svelte';
+	import Navbar from '$lib/components/navbar.svelte';
 
 	/** @type {import("@prismicio/client").Content.RichTextSlice} */
 	export let slice;
 </script>
+
+<Navbar/>
+
 
 <section class="hero">
 	<section class="hero-introduction">
@@ -24,10 +29,14 @@
 		</section>
 	</section>
 
+
+
 	<section class="hero-image">
 		<PrismicImage field={slice.primary.hero_image} width="400px" />
 	</section>
 </section>
+
+<Profile/>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
