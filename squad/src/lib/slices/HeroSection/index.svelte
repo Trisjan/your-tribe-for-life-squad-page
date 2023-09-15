@@ -1,5 +1,6 @@
 <script>
 	import { PrismicRichText } from '@prismicio/svelte';
+	import { PrismicImage } from '@prismicio/svelte';
 	import Label from './Label.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 
@@ -16,6 +17,8 @@
 			label: Label
 		}}
 	/>
+
+	<PrismicImage field={slice.primary.hero_img} />
 </section>
 
 <style>

@@ -1,0 +1,52 @@
+{
+  "id": "squad_a",
+  "type": "SharedSlice",
+  "name": "SquadA",
+  "description": "SquadA",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "saturnus": {
+          "type": "Image",
+          "config": {
+            "label": "saturnus",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "squad_a": {
+          "type": "Link",
+          "config": {
+            "label": "squad a",
+            "select": "document"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

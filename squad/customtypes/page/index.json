@@ -1,6 +1,6 @@
 {
 	"id": "page",
-	"label": "Page",
+	"label": "HomePage",
 	"format": "page",
 	"repeatable": true,
 	"status": true,
@@ -27,6 +27,12 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"squad_a": {
+							"type": "SharedSlice"
+						},
+						"squad_b": {
+							"type": "SharedSlice"
+						},
 						"rich_text": {
 							"type": "SharedSlice"
 						}
