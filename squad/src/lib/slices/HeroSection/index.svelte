@@ -10,22 +10,22 @@
 </script>
 
 <section class="hero">
-	<section class="hero-title">
-		<PrismicRichText field={slice.primary.hero_title} />
+	<section class="hero-introduction">
+		<section class="hero-title">
+			<PrismicRichText field={slice.primary.hero_title} />
+		</section>
+		<section class="hero-intro">
+			<PrismicRichText
+				field={slice.primary.content}
+				components={{
+					label: Label
+				}}
+			/>
+		</section>
 	</section>
-	<section class="hero-intro">
-		<PrismicRichText
-			field={slice.primary.content}
-			components={{
-				label: Label
-			}}
-		/>
-	</section>
+
 	<section class="hero-image">
-		<PrismicImage field={slice.primary.hero_img} />
-	</section>
-	<section class="hero-button">
-		<PrismicRichText field={slice.primary.hero_button} />
+		<PrismicImage field={slice.primary.hero_image} />
 	</section>
 </section>
 
@@ -35,6 +35,8 @@
 	.hero {
 		background-color: #221f29;
 		color: #ffffff;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
 	}
 
 	.hero-title {
@@ -66,28 +68,30 @@
 		display: none;
 	}
 
-	.hero-button {
-		/* font settings: */
-		color: #3f3e8a;
-		font-family: Poppins;
-		font-size: 1rem;
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
-		letter-spacing: 0.00875rem;
-		text-align: center;
-		/* margin + padding settings: */
-		margin-left: 1rem;
-		padding: 0.5rem;
-		background-color: #ffffff;
-		border-radius: 0.375rem;
-		width: 12rem;
-	}
-
 	@media (min-width: 31em) {
+		.hero-image {
+			display: none;
+		}
 	}
 
 	@media (min-width: 45em) {
+		.hero {
+			display: grid;
+			grid:
+				'title image' 1fr
+				/ 1fr 1fr;
+			column-gap: 20px;
+		}
+
+		.hero-introduction {
+			grid-area: title;
+		}
+
+		.hero-image {
+			display: block;
+			grid-area: image;
+			text-align: right;
+		}
 	}
 
 	@media (min-width: 68em) {
