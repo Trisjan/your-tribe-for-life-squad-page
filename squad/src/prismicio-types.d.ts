@@ -279,43 +279,48 @@ export interface RichTextSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
 	squads: prismic.ContentRelationshipField;
+}
 
+/**
+ * Primary content in *HeroSection → Items*
+ */
+export interface RichTextSliceDefaultItem {
 	/**
-	 * Image field in *HeroSection → Primary*
+	 * Image field in *HeroSection → Items*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: rich_text.primary.image
+	 * - **API ID Path**: rich_text.items[].image
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	image: prismic.ImageField<never>;
 
 	/**
-	 * Name field in *HeroSection → Primary*
+	 * Name field in *HeroSection → Items*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: rich_text.primary.name
+	 * - **API ID Path**: rich_text.items[].name
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	name: prismic.KeyTextField;
 
 	/**
-	 * GitHub tag field in *HeroSection → Primary*
+	 * GitHub tag field in *HeroSection → Items*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: rich_text.primary.github_tag
+	 * - **API ID Path**: rich_text.items[].github_tag
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	github_tag: prismic.KeyTextField;
 
 	/**
-	 * GitHub link field in *HeroSection → Primary*
+	 * GitHub link field in *HeroSection → Items*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: rich_text.primary.github_link
+	 * - **API ID Path**: rich_text.items[].github_link
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
 	github_link: prismic.LinkField;
@@ -331,7 +336,7 @@ export interface RichTextSliceDefaultPrimary {
 export type RichTextSliceDefault = prismic.SharedSliceVariation<
 	'default',
 	Simplify<RichTextSliceDefaultPrimary>,
-	never
+	Simplify<RichTextSliceDefaultItem>
 >;
 
 /**
@@ -665,6 +670,7 @@ declare module '@prismicio/client' {
 			AllDocumentTypes,
 			RichTextSlice,
 			RichTextSliceDefaultPrimary,
+			RichTextSliceDefaultItem,
 			RichTextSliceVariation,
 			RichTextSliceDefault,
 			SquadASlice,
