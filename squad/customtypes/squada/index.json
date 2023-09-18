@@ -6,6 +6,22 @@
 	"status": true,
 	"json": {
 		"Main": {
+			"uid": {
+				"type": "UID",
+				"config": {
+					"label": "UID",
+					"placeholder": ""
+				}
+			},
+			"title": {
+				"type": "StructuredText",
+				"config": {
+					"label": "Title",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+				}
+			},
 			"slices": {
 				"type": "Slices",
 				"fieldset": "Slice Zone",
@@ -43,6 +59,17 @@
 					"placeholder": "A title of the page used for social media and search engines"
 				},
 				"type": "Text"
+			},
+			"slices1": {
+				"type": "Slices",
+				"fieldset": "Slice Zone",
+				"config": {
+					"choices": {
+						"squad_a_detail_page": {
+							"type": "SharedSlice"
+						}
+					}
+				}
 			}
 		}
 	}

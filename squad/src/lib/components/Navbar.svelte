@@ -5,7 +5,7 @@
 <nav>
     <a href="/"><Logo/></a>
     <ul>
-        <li><a href="/">Squad A</a></li>
+        <li><a href="/squad-a">Squad A</a></li>
         <li><a href="/">Squad B</a></li>
     </ul>
 </nav>

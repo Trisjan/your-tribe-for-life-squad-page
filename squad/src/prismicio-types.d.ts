@@ -82,10 +82,23 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 
 type SquadaDocumentDataSlicesSlice = SquadADetailPageSlice;
 
+type SquadaDocumentDataSlices1Slice = SquadADetailPageSlice;
+
 /**
  * Content for SquadA documents
  */
 interface SquadaDocumentData {
+	/**
+	 * Title field in *SquadA*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squada.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
 	/**
 	 * Slice Zone field in *SquadA*
 	 *
@@ -128,6 +141,17 @@ interface SquadaDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	meta_title: prismic.KeyTextField;
+
+	/**
+	 * Slice Zone field in *SquadA*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squada.slices1[]
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#slices
+	 */
+	slices1: prismic.SliceZone<SquadaDocumentDataSlices1Slice>;
 }
 
 /**
@@ -139,7 +163,7 @@ interface SquadaDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type SquadaDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+export type SquadaDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<
 	Simplify<SquadaDocumentData>,
 	'squada',
 	Lang
@@ -255,6 +279,46 @@ export interface RichTextSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
 	squads: prismic.ContentRelationshipField;
+
+	/**
+	 * Image field in *HeroSection → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * Name field in *HeroSection → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.primary.name
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	name: prismic.KeyTextField;
+
+	/**
+	 * GitHub tag field in *HeroSection → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.primary.github_tag
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	github_tag: prismic.KeyTextField;
+
+	/**
+	 * GitHub link field in *HeroSection → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.primary.github_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	github_link: prismic.LinkField;
 }
 
 /**
@@ -357,6 +421,96 @@ type SquadASliceVariation = SquadASliceDefault;
 export type SquadASlice = prismic.SharedSlice<'squad_a', SquadASliceVariation>;
 
 /**
+ * Primary content in *SquadADetailPage → Primary*
+ */
+export interface SquadADetailPageSliceDefaultPrimary {
+	/**
+	 * Image field in *SquadADetailPage → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * Name field in *SquadADetailPage → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.primary.name
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	name: prismic.KeyTextField;
+
+	/**
+	 * GitHub tag field in *SquadADetailPage → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.primary.github_tag
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	github_tag: prismic.KeyTextField;
+
+	/**
+	 * GitHub link field in *SquadADetailPage → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.primary.github_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	github_link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *SquadADetailPage → Items*
+ */
+export interface SquadADetailPageSliceDefaultItem {
+	/**
+	 * Image field in *SquadADetailPage → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.items[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * Name field in *SquadADetailPage → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.items[].name
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	name: prismic.KeyTextField;
+
+	/**
+	 * GitHub tag field in *SquadADetailPage → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.items[].github_tag
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	github_tag: prismic.KeyTextField;
+
+	/**
+	 * GitHub link field in *SquadADetailPage → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.items[].github_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	github_link: prismic.LinkField;
+}
+
+/**
  * Default variation for SquadADetailPage Slice
  *
  * - **API ID**: `default`
@@ -365,8 +519,8 @@ export type SquadASlice = prismic.SharedSlice<'squad_a', SquadASliceVariation>;
  */
 export type SquadADetailPageSliceDefault = prismic.SharedSliceVariation<
 	'default',
-	Record<string, never>,
-	never
+	Simplify<SquadADetailPageSliceDefaultPrimary>,
+	Simplify<SquadADetailPageSliceDefaultItem>
 >;
 
 /**
@@ -504,6 +658,7 @@ declare module '@prismicio/client' {
 			SquadaDocument,
 			SquadaDocumentData,
 			SquadaDocumentDataSlicesSlice,
+			SquadaDocumentDataSlices1Slice,
 			SquadbDocument,
 			SquadbDocumentData,
 			SquadbDocumentDataSlicesSlice,
@@ -517,6 +672,8 @@ declare module '@prismicio/client' {
 			SquadASliceVariation,
 			SquadASliceDefault,
 			SquadADetailPageSlice,
+			SquadADetailPageSliceDefaultPrimary,
+			SquadADetailPageSliceDefaultItem,
 			SquadADetailPageSliceVariation,
 			SquadADetailPageSliceDefault,
 			SquadBSlice,
