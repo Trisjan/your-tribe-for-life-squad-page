@@ -11,8 +11,10 @@
 </nav>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
 
     ul {
+        font-family: Syncopate;
         text-transform: uppercase;
         font-weight: bold;
         list-style-type: none;

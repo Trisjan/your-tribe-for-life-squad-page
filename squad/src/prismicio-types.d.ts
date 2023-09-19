@@ -241,17 +241,17 @@ export type AllDocumentTypes = PageDocument | SquadaDocument | SquadbDocument;
  */
 export interface RichTextSliceDefaultPrimary {
 	/**
-	 * Title field in *HeroSection → Primary*
+	 * hero_title field in *HeroSection → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: rich_text.primary.title
+	 * - **API ID Path**: rich_text.primary.hero_title
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	title: prismic.RichTextField;
+	hero_title: prismic.RichTextField;
 
 	/**
-	 * Content field in *HeroSection → Primary*
+	 * hero_Intro field in *HeroSection → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: Lorem ipsum...
@@ -261,24 +261,24 @@ export interface RichTextSliceDefaultPrimary {
 	content: prismic.RichTextField;
 
 	/**
-	 * hero img field in *HeroSection → Primary*
+	 * hero_image field in *HeroSection → Primary*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: rich_text.primary.hero_img
+	 * - **API ID Path**: rich_text.primary.hero_image
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
-	hero_img: prismic.ImageField<never>;
+	hero_image: prismic.ImageField<never>;
 
 	/**
-	 * squads field in *HeroSection → Primary*
+	 * hero_button field in *HeroSection → Primary*
 	 *
-	 * - **Field Type**: Content Relationship
+	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: rich_text.primary.squads
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 * - **API ID Path**: rich_text.primary.hero_button
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	squads: prismic.ContentRelationshipField;
+	hero_button: prismic.RichTextField;
 }
 
 /**

@@ -1,38 +1,7 @@
-# create-svelte
+# THE SQUAD-PAGE 
+TEAM "Powerpuff girls": Trisjan, Eliza, Tobias, Marco, Ivar en Emona. 
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+### The Page 
+Bekijk de [WIKI](https://github.com/Trisjan/your-tribe-for-life-squad-page/wiki) om op de hoogte te blijven van het nieuwste werk! 
+<img width="668" alt="Schermafbeelding 2023-09-17 om 21 00 46" src="https://github.com/Trisjan/your-tribe-for-life-squad-page/assets/90447045/c39fc386-008e-4745-b110-1de84ad1aba0">
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
