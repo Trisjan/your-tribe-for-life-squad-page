@@ -1,16 +1,80 @@
 {
-	"id": "squad_a_detail_page",
-	"type": "SharedSlice",
-	"name": "SquadADetailPage",
-	"description": "SquadADetailPage",
-	"variations": [
-		{
-			"id": "default",
-			"name": "Default",
-			"docURL": "...",
-			"version": "initial",
-			"description": "Default",
-			"imageUrl": ""
-		}
-	]
+  "id": "squad_a_detail_page",
+  "type": "SharedSlice",
+  "name": "SquadADetailPage",
+  "description": "SquadADetailPage",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Name",
+            "placeholder": ""
+          }
+        },
+        "github_tag": {
+          "type": "Text",
+          "config": {
+            "label": "GitHub tag",
+            "placeholder": ""
+          }
+        },
+        "github_link": {
+          "type": "Link",
+          "config": {
+            "label": "GitHub link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Name",
+            "placeholder": ""
+          }
+        },
+        "github_tag": {
+          "type": "Text",
+          "config": {
+            "label": "GitHub tag",
+            "placeholder": ""
+          }
+        },
+        "github_link": {
+          "type": "Link",
+          "config": {
+            "label": "GitHub link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    }
+  ]
 }

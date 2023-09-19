@@ -12,7 +12,7 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "title": {
+        "titleb": {
           "type": "StructuredText",
           "config": {
             "label": "Title",
@@ -21,7 +21,7 @@
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "content": {
+        "contentb": {
           "type": "StructuredText",
           "config": {
             "label": "Content",
@@ -30,7 +30,7 @@
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "earth": {
+        "earthb": {
           "type": "Image",
           "config": {
             "label": "Earth",
@@ -38,7 +38,7 @@
             "thumbnails": []
           }
         },
-        "squadb": {
+        "squadbb": {
           "type": "Link",
           "config": {
             "label": "SquadB",

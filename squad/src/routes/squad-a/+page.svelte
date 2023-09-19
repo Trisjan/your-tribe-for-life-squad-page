@@ -1,17 +1,25 @@
-<!-- <script>
-	import { PrismicImage } from '@prismicio/svelte';
+<script>
+	import Profile from '$lib/components/profile.svelte';
+	import Navbar from '$lib/components/navbar.svelte';
 
 	/** @type {import("@prismicio/client").Content.SquadADetailPageSlice} */
 	export let slice;
-</script> -->
+</script>
 
-<!-- <PrismicImage field={slice.primary.image} /> -->
+<Navbar />
+
+<!-- <Profile/> -->
 
 <div class="grid-container">
 	<div class="grid">
 		<div class="div1" />
-		<div class="name">Eliza Lacroes</div>
-		<div class="github">@moonlightlizaa</div>
+		{#if slice && slice.primary}
+			<div class="name">{slice.primary.name}</div>
+			<div class="github">{slice.primary.github_tag}</div>
+		{:else}
+			<!-- Handle the case where slice or slice.primary is undefined -->
+			<p>Data is unavailable</p>
+		{/if}
 	</div>
 	<div class="grid">
 		<div class="div2" />

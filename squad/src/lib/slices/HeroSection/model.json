@@ -52,7 +52,39 @@
           }
         }
       },
-      "items": {},
+      "items": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Name",
+            "placeholder": ""
+          }
+        },
+        "github_tag": {
+          "type": "Text",
+          "config": {
+            "label": "GitHub tag",
+            "placeholder": ""
+          }
+        },
+        "github_link": {
+          "type": "Link",
+          "config": {
+            "label": "GitHub link",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        }
+      },
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]
