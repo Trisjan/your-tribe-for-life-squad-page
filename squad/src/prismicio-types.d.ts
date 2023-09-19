@@ -82,10 +82,23 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 
 type SquadaDocumentDataSlicesSlice = SquadADetailPageSlice;
 
+type SquadaDocumentDataSlices1Slice = SquadADetailPageSlice;
+
 /**
  * Content for SquadA documents
  */
 interface SquadaDocumentData {
+	/**
+	 * Title field in *SquadA*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squada.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
 	/**
 	 * Slice Zone field in *SquadA*
 	 *
@@ -128,6 +141,17 @@ interface SquadaDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	meta_title: prismic.KeyTextField;
+
+	/**
+	 * Slice Zone field in *SquadA*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squada.slices1[]
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#slices
+	 */
+	slices1: prismic.SliceZone<SquadaDocumentDataSlices1Slice>;
 }
 
 /**
@@ -139,7 +163,7 @@ interface SquadaDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type SquadaDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+export type SquadaDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<
 	Simplify<SquadaDocumentData>,
 	'squada',
 	Lang
@@ -258,6 +282,51 @@ export interface RichTextSliceDefaultPrimary {
 }
 
 /**
+ * Primary content in *HeroSection → Items*
+ */
+export interface RichTextSliceDefaultItem {
+	/**
+	 * Image field in *HeroSection → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.items[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * Name field in *HeroSection → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.items[].name
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	name: prismic.KeyTextField;
+
+	/**
+	 * GitHub tag field in *HeroSection → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.items[].github_tag
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	github_tag: prismic.KeyTextField;
+
+	/**
+	 * GitHub link field in *HeroSection → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: rich_text.items[].github_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	github_link: prismic.LinkField;
+}
+
+/**
  * Default variation for HeroSection Slice
  *
  * - **API ID**: `default`
@@ -267,7 +336,7 @@ export interface RichTextSliceDefaultPrimary {
 export type RichTextSliceDefault = prismic.SharedSliceVariation<
 	'default',
 	Simplify<RichTextSliceDefaultPrimary>,
-	never
+	Simplify<RichTextSliceDefaultItem>
 >;
 
 /**
@@ -293,40 +362,40 @@ export interface SquadASliceDefaultPrimary {
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_a.primary.content
+	 * - **API ID Path**: squad_a.primary.contenta
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	content: prismic.RichTextField;
+	contenta: prismic.RichTextField;
 
 	/**
 	 * Title field in *SquadA → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_a.primary.title
+	 * - **API ID Path**: squad_a.primary.titlea
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	title: prismic.RichTextField;
+	titlea: prismic.RichTextField;
 
 	/**
 	 * saturnus field in *SquadA → Primary*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_a.primary.saturnus
+	 * - **API ID Path**: squad_a.primary.saturnusa
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
-	saturnus: prismic.ImageField<never>;
+	saturnusa: prismic.ImageField<never>;
 
 	/**
 	 * squad a field in *SquadA → Primary*
 	 *
 	 * - **Field Type**: Content Relationship
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_a.primary.squad_a
+	 * - **API ID Path**: squad_a.primary.squad_aa
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	squad_a: prismic.ContentRelationshipField;
+	squad_aa: prismic.ContentRelationshipField;
 }
 
 /**
@@ -357,6 +426,96 @@ type SquadASliceVariation = SquadASliceDefault;
 export type SquadASlice = prismic.SharedSlice<'squad_a', SquadASliceVariation>;
 
 /**
+ * Primary content in *SquadADetailPage → Primary*
+ */
+export interface SquadADetailPageSliceDefaultPrimary {
+	/**
+	 * Image field in *SquadADetailPage → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * Name field in *SquadADetailPage → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.primary.name
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	name: prismic.KeyTextField;
+
+	/**
+	 * GitHub tag field in *SquadADetailPage → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.primary.github_tag
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	github_tag: prismic.KeyTextField;
+
+	/**
+	 * GitHub link field in *SquadADetailPage → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.primary.github_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	github_link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *SquadADetailPage → Items*
+ */
+export interface SquadADetailPageSliceDefaultItem {
+	/**
+	 * Image field in *SquadADetailPage → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.items[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * Name field in *SquadADetailPage → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.items[].name
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	name: prismic.KeyTextField;
+
+	/**
+	 * GitHub tag field in *SquadADetailPage → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.items[].github_tag
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	github_tag: prismic.KeyTextField;
+
+	/**
+	 * GitHub link field in *SquadADetailPage → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: squad_a_detail_page.items[].github_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	github_link: prismic.LinkField;
+}
+
+/**
  * Default variation for SquadADetailPage Slice
  *
  * - **API ID**: `default`
@@ -365,8 +524,8 @@ export type SquadASlice = prismic.SharedSlice<'squad_a', SquadASliceVariation>;
  */
 export type SquadADetailPageSliceDefault = prismic.SharedSliceVariation<
 	'default',
-	Record<string, never>,
-	never
+	Simplify<SquadADetailPageSliceDefaultPrimary>,
+	Simplify<SquadADetailPageSliceDefaultItem>
 >;
 
 /**
@@ -395,40 +554,40 @@ export interface SquadBSliceDefaultPrimary {
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_b.primary.title
+	 * - **API ID Path**: squad_b.primary.titleb
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	title: prismic.RichTextField;
+	titleb: prismic.RichTextField;
 
 	/**
 	 * Content field in *SquadB → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_b.primary.content
+	 * - **API ID Path**: squad_b.primary.contentb
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	content: prismic.RichTextField;
+	contentb: prismic.RichTextField;
 
 	/**
 	 * Earth field in *SquadB → Primary*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_b.primary.earth
+	 * - **API ID Path**: squad_b.primary.earthb
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
-	earth: prismic.ImageField<never>;
+	earthb: prismic.ImageField<never>;
 
 	/**
 	 * SquadB field in *SquadB → Primary*
 	 *
 	 * - **Field Type**: Content Relationship
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_b.primary.squadb
+	 * - **API ID Path**: squad_b.primary.squadbb
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	squadb: prismic.ContentRelationshipField;
+	squadbb: prismic.ContentRelationshipField;
 }
 
 /**
@@ -504,12 +663,14 @@ declare module '@prismicio/client' {
 			SquadaDocument,
 			SquadaDocumentData,
 			SquadaDocumentDataSlicesSlice,
+			SquadaDocumentDataSlices1Slice,
 			SquadbDocument,
 			SquadbDocumentData,
 			SquadbDocumentDataSlicesSlice,
 			AllDocumentTypes,
 			RichTextSlice,
 			RichTextSliceDefaultPrimary,
+			RichTextSliceDefaultItem,
 			RichTextSliceVariation,
 			RichTextSliceDefault,
 			SquadASlice,
@@ -517,6 +678,8 @@ declare module '@prismicio/client' {
 			SquadASliceVariation,
 			SquadASliceDefault,
 			SquadADetailPageSlice,
+			SquadADetailPageSliceDefaultPrimary,
+			SquadADetailPageSliceDefaultItem,
 			SquadADetailPageSliceVariation,
 			SquadADetailPageSliceDefault,
 			SquadBSlice,
