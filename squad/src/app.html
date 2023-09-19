@@ -1,24 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
-	<style>
-		body {
-			margin: 0;
-			border: border-box;
-		}
-	</style>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet" />
+	%sveltekit.head%
+</head>
+
+<body data-sveltekit-preload-data="hover">
+	<div style="display: contents">%sveltekit.body%</div>
+</body>
+<style>
+	body {
+		margin: 0;
+		border: border-box;
+
+		background-color: #221f29;
+
+	}
+
+	h1,
+	h1 p {
+		margin: 0;
+	}
+
+	.grid-container-a img,
+	.grid-container-b img {
+		border-radius: 20px;
+		width: 250px;
+		height: 250px;
+	}
+
+	.img-ufo {
+		overflow-x: hidden;
+		margin-left: 6.5rem;
+		scale: 120%;
+	}
+
+	#button1.clicked,
+	#button2.clicked {
+		background-color: aqua;
+	}
+</style>
+
+<script>
+	// Get references to the buttons and options
+	const button1 = document.getElementById("button1");
+	const button2 = document.getElementById("button2");
+	const option1 = document.getElementById("option1");
+	const option2 = document.getElementById("option2");
+
+	// Add click event listeners to the buttons
+	button1.addEventListener("click", function () {
+		option1.style.display = "grid";
+		option2.style.display = "none";
+
+		button1.classList.toggle('clicked');
+		button2.classList.remove('clicked');
+	});
+
+	button2.addEventListener("click", function () {
+		option1.style.display = "none";
+		option2.style.display = "grid";
+
+		button2.classList.toggle('clicked');
+		button1.classList.remove('clicked');
+	});
+</script>
+
 </html>

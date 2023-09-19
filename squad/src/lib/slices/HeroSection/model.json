@@ -76,6 +76,7 @@
           "config": {
             "label": "GitHub link",
             "placeholder": "",
+            "allowTargetBlank": true,
             "select": null
           }
         }

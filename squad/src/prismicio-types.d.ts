@@ -362,40 +362,40 @@ export interface SquadASliceDefaultPrimary {
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_a.primary.content
+	 * - **API ID Path**: squad_a.primary.contenta
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	content: prismic.RichTextField;
+	contenta: prismic.RichTextField;
 
 	/**
 	 * Title field in *SquadA → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_a.primary.title
+	 * - **API ID Path**: squad_a.primary.titlea
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	title: prismic.RichTextField;
+	titlea: prismic.RichTextField;
 
 	/**
 	 * saturnus field in *SquadA → Primary*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_a.primary.saturnus
+	 * - **API ID Path**: squad_a.primary.saturnusa
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
-	saturnus: prismic.ImageField<never>;
+	saturnusa: prismic.ImageField<never>;
 
 	/**
 	 * squad a field in *SquadA → Primary*
 	 *
 	 * - **Field Type**: Content Relationship
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_a.primary.squad_a
+	 * - **API ID Path**: squad_a.primary.squad_aa
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	squad_a: prismic.ContentRelationshipField;
+	squad_aa: prismic.ContentRelationshipField;
 }
 
 /**
@@ -554,40 +554,40 @@ export interface SquadBSliceDefaultPrimary {
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_b.primary.title
+	 * - **API ID Path**: squad_b.primary.titleb
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	title: prismic.RichTextField;
+	titleb: prismic.RichTextField;
 
 	/**
 	 * Content field in *SquadB → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_b.primary.content
+	 * - **API ID Path**: squad_b.primary.contentb
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	content: prismic.RichTextField;
+	contentb: prismic.RichTextField;
 
 	/**
 	 * Earth field in *SquadB → Primary*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_b.primary.earth
+	 * - **API ID Path**: squad_b.primary.earthb
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
-	earth: prismic.ImageField<never>;
+	earthb: prismic.ImageField<never>;
 
 	/**
 	 * SquadB field in *SquadB → Primary*
 	 *
 	 * - **Field Type**: Content Relationship
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: squad_b.primary.squadb
+	 * - **API ID Path**: squad_b.primary.squadbb
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	squadb: prismic.ContentRelationshipField;
+	squadbb: prismic.ContentRelationshipField;
 }
 
 /**

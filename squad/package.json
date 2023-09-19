@@ -33,6 +33,8 @@
 	"type": "module",
 	"dependencies": {
 		"@prismicio/client": "^7.2.0",
-		"@prismicio/svelte": "^0.1.2"
+		"@prismicio/svelte": "^0.1.2",
+		"ejs": "^3.1.9",
+		"express": "^4.18.2"
 	}
 }
