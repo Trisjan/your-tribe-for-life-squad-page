@@ -1,6 +1,4 @@
 <script>
-	// @ts-nocheck
-
 	import { PrismicRichText } from '@prismicio/svelte';
 	import { PrismicImage } from '@prismicio/svelte';
 	import { PrismicLink } from '@prismicio/svelte';
@@ -17,6 +15,7 @@
 
 	import Label from './Label.svelte';
 	import Profile from '$lib/components/profile.svelte';
+	// import Navbar from '$lib/components/navbar.svelte';
 
 	/** @type {import("@prismicio/client").Content.RichTextSlice} */
 	export let slice;
@@ -28,7 +27,7 @@
 	<section class="text">
 		{#if animate}
 			<h1 in:fly={{ x: -200, easing: backOut, delay: 500 }}>
-				<PrismicRichText field={slice.primary.title} />
+				<PrismicRichText field={slice.primary.hero_title} />
 			</h1>
 		{/if}
 		{#if animate}
@@ -38,7 +37,7 @@
 		{/if}
 	</section>
 	<section class="img-ufo">
-		<PrismicImage field={slice.primary.hero_img} />
+		<PrismicImage field={slice.primary.hero_image} />
 	</section>
 </section>
 

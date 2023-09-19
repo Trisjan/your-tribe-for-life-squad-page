@@ -37,7 +37,7 @@
           "config": {
             "label": "hero_image",
             "constraint": {
-              "width": 650
+              "width": null
             },
             "thumbnails": []
           }
