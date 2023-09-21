@@ -12,8 +12,14 @@
 </head>
 
 <body data-sveltekit-preload-data="hover">
+	<nav>
+		<input class="searchbar" type="text" id="searchInput" onkeyup="search()"
+			placeholder="searchbar type hier de naam of de github">
+	</nav>
+
 	<div style="display: contents">%sveltekit.body%</div>
 </body>
+
 <style>
 	body {
 		margin: 0;
@@ -45,6 +51,28 @@
 	#button2.clicked {
 		background-color: aqua;
 	}
+
+	nav {
+		display: flex;
+		justify-content: center;
+	}
+
+	.searchbar {
+		background-color: white;
+		width: 44rem;
+		height: 3rem;
+		margin-right: 1rem;
+
+		color: #3f3e8a;
+		text-align: center;
+		font-family: Poppins;
+		font-size: 1.5rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: 0.015rem;
+		border-radius: 1rem;
+	}
 </style>
 
 <script>
@@ -70,6 +98,29 @@
 		button2.classList.toggle('clicked');
 		button1.classList.remove('clicked');
 	});
+
+	function search() {
+		// Declare variables
+		var input, filter, divs, div, name, github, i, txtName, txtGithub;
+		input = document.getElementById('searchInput');
+		filter = input.value.toUpperCase();
+		divs = document.querySelectorAll('#members .grid');
+
+		// Loop through all grid items, and hide those that don't match the search query
+		for (i = 0; i < divs.length; i++) {
+			div = divs[i];
+			name = div.querySelector(".name");
+			github = div.querySelector(".github");
+			txtName = name.textContent || name.innerText;
+			txtGithub = github.textContent || github.innerText;
+
+			if (txtName.toUpperCase().indexOf(filter) > -1 || txtGithub.toUpperCase().indexOf(filter) > -1) {
+				div.style.display = "";
+			} else {
+				div.style.display = "none";
+			}
+		}
+	}
 </script>
 
 </html>

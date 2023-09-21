@@ -46,32 +46,34 @@
 	<button id="button2">Squad B</button>
 </section>
 
-<div class="grid-container-a" id="option1">
-	{#each slice.items.slice(0, 22) as item}
-		<div class="grid">
-			<div class="div">
-				<PrismicLink field={item.github_link}>
-					<PrismicImage field={item.image} />
-				</PrismicLink>
+<div id="members">
+	<div class="grid-container-a" id="option1">
+		{#each slice.items.slice(0, 22) as item}
+			<div class="grid">
+				<div class="div">
+					<PrismicLink field={item.github_link}>
+						<PrismicImage field={item.image} />
+					</PrismicLink>
+				</div>
+				<div class="name">{item.name}</div>
+				<div class="github">@{item.github_tag}</div>
 			</div>
-			<div class="name">{item.name}</div>
-			<div class="github">@{item.github_tag}</div>
-		</div>
-	{/each}
-</div>
+		{/each}
+	</div>
 
-<div class="grid-container-b" id="option2">
-	{#each slice.items.slice(22, 48) as item}
-		<div class="grid">
-			<div class="div">
-				<PrismicLink field={item.github_link}>
-					<PrismicImage field={item.image} />
-				</PrismicLink>
+	<div class="grid-container-b" id="option2">
+		{#each slice.items.slice(22, 48) as item}
+			<div class="grid">
+				<div class="div">
+					<PrismicLink field={item.github_link}>
+						<PrismicImage field={item.image} />
+					</PrismicLink>
+				</div>
+				<div class="name">{item.name}</div>
+				<div class="github">@{item.github_tag}</div>
 			</div>
-			<div class="name">{item.name}</div>
-			<div class="github">@{item.github_tag}</div>
-		</div>
-	{/each}
+		{/each}
+	</div>
 </div>
 
 <style>
