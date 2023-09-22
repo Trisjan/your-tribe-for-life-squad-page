@@ -121,6 +121,30 @@
 			}
 		}
 	}
+
+	// Get all grid items
+	const gridItems = document.querySelectorAll('.grid-item');
+
+	// Add a mouseover event listener to each grid item
+	gridItems.forEach((item) => {
+		item.addEventListener('mouseover', () => {
+			// Remove grayscale filter from all items except the one being hovered over
+			gridItems.forEach((otherItem) => {
+				if (otherItem !== item) {
+					otherItem.style.filter = 'grayscale(100%)';
+				}
+			});
+		});
+
+		// Add a mouseout event listener to each grid item
+		item.addEventListener('mouseout', () => {
+			// Restore the grayscale filter to all items when not hovering over any item
+			gridItems.forEach((otherItem) => {
+				otherItem.style.filter = 'none';
+			});
+		});
+	});
+
 </script>
 
 </html>

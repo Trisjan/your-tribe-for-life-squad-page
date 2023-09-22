@@ -50,7 +50,7 @@
 	<div class="grid-container-a" id="option1">
 		{#each slice.items.slice(0, 22) as item}
 			<div class="grid">
-				<div class="div">
+				<div class="grid-item">
 					<PrismicLink field={item.github_link}>
 						<PrismicImage field={item.image} />
 					</PrismicLink>
@@ -64,7 +64,7 @@
 	<div class="grid-container-b" id="option2">
 		{#each slice.items.slice(22, 48) as item}
 			<div class="grid">
-				<div class="div">
+				<div class="grid-item">
 					<PrismicLink field={item.github_link}>
 						<PrismicImage field={item.image} />
 					</PrismicLink>
@@ -157,6 +157,10 @@
 		align-items: flex-start;
 	}
 
+	.grid:hover {
+		transform: scale(1.1);
+	}
+
 	.name {
 		/* color: #221f29; */
 		font-family: 'Syncopate', sans-serif;
@@ -175,7 +179,7 @@
 		font-size: 0.8rem;
 	}
 
-	.div {
+	.grid-item {
 		width: 250px;
 		height: 250px;
 		flex-shrink: 0;
